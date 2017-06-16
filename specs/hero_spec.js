@@ -25,4 +25,8 @@ describe('Hero',function(){
     assert.strictEqual("My name is Basil",hero1.talk());
   })
 
+  it ("Hero starts with 0 tasks", function(){
+    assert.strictEqual(0,hero1.tasks.length);
+  })
+
 })
