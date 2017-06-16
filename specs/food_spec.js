@@ -16,4 +16,5 @@ describe('Food',function(){
   it("Food has replenishment value", function(){
     assert.strictEqual(20, food1.heal)
   })
+
 })

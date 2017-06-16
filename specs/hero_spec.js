@@ -1,5 +1,7 @@
 var assert = require('assert');
 var Hero = require('../hero.js');
+var Food = require('../food.js');
+
 
 describe('Hero',function(){
 
@@ -7,6 +9,7 @@ describe('Hero',function(){
 
   beforeEach(function(){
    hero1 = new Hero("Basil", 100, "apples");
+   food1 = new Food("crumpets",20)
  })
 
   it ("Hero has name", function(){
@@ -28,5 +31,12 @@ describe('Hero',function(){
   it ("Hero starts with 0 tasks", function(){
     assert.strictEqual(0,hero1.tasks.length);
   })
+
+  it("Hero gets health from Food", function(){
+    hero1.eat(food1);
+    assert.strictEqual(120, hero1.health);
+  })
+
+
 
 })

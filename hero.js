@@ -11,6 +11,10 @@ Hero.prototype = {
     return "My name is " + this.name;
   },
 
+  eat: function(food){
+    this.health += food.heal;
+  }
+
 
 }
 module.exports = Hero;
