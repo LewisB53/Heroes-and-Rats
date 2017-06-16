@@ -8,8 +8,10 @@ describe('Hero',function(){
   var hero1;
 
   beforeEach(function(){
-   hero1 = new Hero("Basil", 100, "apples");
+   hero1 = new Hero("Basil", 100, "crumpets");
    food1 = new Food("crumpets",20)
+   food2 = new Food("apples", 10)
+
  })
 
   it ("Hero has name", function(){
@@ -21,7 +23,7 @@ describe('Hero',function(){
   }),
 
   it ("Hero has favourite food", function(){
-    assert.strictEqual("apples",hero1.favourite_food);
+    assert.strictEqual("crumpets",hero1.favourite_food);
   })
 
   it ("Hero can talk", function(){
@@ -33,8 +35,13 @@ describe('Hero',function(){
   })
 
   it("Hero gets health from Food", function(){
+    hero1.eat(food2);
+    assert.strictEqual(110, hero1.health);
+  })
+
+  it("Hero gets health bonus from favourite Food", function(){
     hero1.eat(food1);
-    assert.strictEqual(120, hero1.health);
+    assert.strictEqual(130, hero1.health);
   })
 
 

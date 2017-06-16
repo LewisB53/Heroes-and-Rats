@@ -12,7 +12,10 @@ Hero.prototype = {
   },
 
   eat: function(food){
-    this.health += food.heal;
+    if(food.name === this.favourite_food){
+    return this.health += (food.heal * 1.5);
+    }
+    else return this.health += food.heal;
   }
 
 
