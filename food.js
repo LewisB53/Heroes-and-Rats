@@ -1,6 +1,7 @@
-var Food = function(name){
+var Food = function(name,heal){
   
   this.name = name;
+  this.heal = heal;
 }
 
 
