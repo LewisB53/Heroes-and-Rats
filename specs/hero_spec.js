@@ -56,9 +56,13 @@ describe('Hero',function(){
   })
 
   it("can sort by difficulty", function(){
-    var difficultyArray = ["Easy","Easy","Medium","Hard"];
     hero1.sortByDifficulty();
     assert.strictEqual(5, hero1.tasks[3].difficulty);
+  })
+
+  it("can sort by urgency", function(){
+    hero1.sortByUrgency();
+    assert.strictEqual(12, hero1.tasks[3].urgency);
   })
 
 })

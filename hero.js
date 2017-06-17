@@ -31,5 +31,12 @@ Hero.prototype = {
      return this.tasks.slice();
   },
 
+  sortByUrgency: function () {
+     this.tasks.sort(function(item1,item2){
+        return item2.urgency < item1.urgency;
+      })
+     return this.tasks.slice();
+  },
+
 }
 module.exports = Hero;
