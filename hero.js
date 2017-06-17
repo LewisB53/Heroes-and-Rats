@@ -38,5 +38,12 @@ Hero.prototype = {
      return this.tasks.slice();
   },
 
+  sortByReward: function () {
+     this.tasks.sort(function(item1,item2){
+        return item2.reward < item1.reward;
+      })
+     return this.tasks.slice();
+  },
+
 }
 module.exports = Hero;

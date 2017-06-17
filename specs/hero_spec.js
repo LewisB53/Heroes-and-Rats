@@ -65,4 +65,9 @@ describe('Hero',function(){
     assert.strictEqual(12, hero1.tasks[3].urgency);
   })
 
+  it("can sort by reward", function(){
+    hero1.sortByReward();
+    assert.strictEqual(200, hero1.tasks[3].reward);
+  })
+
 })
