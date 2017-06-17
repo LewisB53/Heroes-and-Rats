@@ -1,3 +1,5 @@
+var _ = require ("lodash")
+
 var Hero = function(name,health,favourite_food){
   this.name = name;
   this.health = health;
@@ -16,8 +18,18 @@ Hero.prototype = {
     return this.health += (food.heal * 1.5);
     }
     else return this.health += food.heal;
-  }
+  },
 
+  addTask: function(task){
+    this.tasks.push(task);
+  },
+
+  sortByDifficulty: function () {
+     this.tasks.sort(function(item1,item2){
+        return item2.difficulty < item1.difficulty;
+      })
+     return this.tasks.slice();
+  },
 
 }
 module.exports = Hero;

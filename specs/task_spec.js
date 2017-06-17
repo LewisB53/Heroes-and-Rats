@@ -7,6 +7,7 @@ describe('Task',function(){
 
   beforeEach(function(){
    task1 = new Task("Easy","whenever","A Clue",true);
+
  })
 
   it ("Task has difficulty level", function(){
@@ -24,6 +25,7 @@ describe('Task',function(){
   it ("Task has completion status", function(){
     assert.strictEqual(true,task1.completion_status);
   })
+
 
 
 })
