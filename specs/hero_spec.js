@@ -12,6 +12,7 @@ describe('Hero',function(){
    hero1 = new Hero("Basil", 100, "crumpets");
    food1 = new Food("crumpets",20)
    food2 = new Food("apples", 10)
+   food3 = new Food("poisoned food", -10)
 
    task1 = new Task("go", 1,8,100,false);
    task2 = new Task("stop", 4,12,150,false);
@@ -78,6 +79,11 @@ describe('Hero',function(){
   it("can view completed task", function(){
     hero1.markAsCompleted(task4);
     assert.strictEqual("hop", hero1.viewCompletedTask());
+  })
+
+  it("Hero loses health from poisoned Food", function(){
+    hero1.eat(food3);
+    assert.strictEqual(90, hero1.health);
   })
 
 
