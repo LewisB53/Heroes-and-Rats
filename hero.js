@@ -1,14 +1,17 @@
 var _ = require ("lodash")
+var completed = 0;
 
 var Hero = function(name,health,favourite_food){
   this.name = name;
   this.health = health;
   this.favourite_food = favourite_food;
   this.tasks = [];
+  this.completedTasks = [];
 }
 
 
 Hero.prototype = {
+
   talk: function() {
     return "My name is " + this.name;
   },
@@ -44,6 +47,15 @@ Hero.prototype = {
       })
      return this.tasks.slice();
   },
+
+  markAsCompleted: function(task) {
+    this.completedTasks.push(task);
+    this.completed ++
+
+    this.completedTasks[completed].completion_status = true;
+    _.pull(this.tasks, task);
+  },
+
 
 }
 module.exports = Hero;

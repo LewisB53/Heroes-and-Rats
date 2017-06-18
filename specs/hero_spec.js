@@ -13,10 +13,10 @@ describe('Hero',function(){
    food1 = new Food("crumpets",20)
    food2 = new Food("apples", 10)
 
-   task1 = new Task(1,8,100,true);
-   task2 = new Task(4,12,150,true);
-   task3 = new Task(1,1,200,true);
-   task4 = new Task(5,0,50,true);
+   task1 = new Task(1,8,100,false);
+   task2 = new Task(4,12,150,false);
+   task3 = new Task(1,1,200,false);
+   task4 = new Task(5,0,50,false);
 
    hero1.addTask(task1);
    hero1.addTask(task2);
@@ -68,6 +68,11 @@ describe('Hero',function(){
   it("can sort by reward", function(){
     hero1.sortByReward();
     assert.strictEqual(200, hero1.tasks[3].reward);
+  })
+
+  it("can mark as completed", function(){
+    hero1.markAsCompleted(task1);
+    assert.strictEqual(task1, hero1.completedTasks[0]);
   })
 
 })
