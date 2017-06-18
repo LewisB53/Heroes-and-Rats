@@ -71,12 +71,13 @@ describe('Hero',function(){
   })
 
   it("can mark as completed", function(){
-    hero1.markAsCompleted(task1);
-    assert.strictEqual(true, hero1.tasks[0].status);
+    hero1.markAsCompleted(task4);
+    assert.strictEqual(true, hero1.tasks[3].status);
   })
 
-  it("can view tasks", function(){
-    assert.strictEqual("go", hero1.viewAllTasks());
+  it("can view completed task", function(){
+    hero1.markAsCompleted(task4);
+    assert.strictEqual("hop", hero1.viewCompletedTask());
   })
 
 

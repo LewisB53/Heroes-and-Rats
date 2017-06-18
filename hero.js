@@ -48,13 +48,17 @@ Hero.prototype = {
   },
 
   markAsCompleted: function(passedTask) {
-
-    if (this.tasks[0].name === passedTask.name){
-    this.tasks[0].status = true}
+    for(task in this.tasks){
+      if (this.tasks[task].name === passedTask.name){
+      this.tasks[task].status = true}
+    }
   },
 
-  viewAllTasks: function(){
-    return this.tasks[0].name;
+  viewCompletedTask: function(){
+    for(task in this.tasks){
+      if(this.tasks[task].status === true){
+      return this.tasks[task].name}
+    };
   },
 
 }
