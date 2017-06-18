@@ -6,7 +6,6 @@ var Hero = function(name,health,favourite_food){
   this.health = health;
   this.favourite_food = favourite_food;
   this.tasks = [];
-  this.completedTasks = [];
 }
 
 
@@ -48,14 +47,15 @@ Hero.prototype = {
      return this.tasks.slice();
   },
 
-  markAsCompleted: function(task) {
-    this.completedTasks.push(task);
-    this.completed ++
+  markAsCompleted: function(passedTask) {
 
-    this.completedTasks[completed].completion_status = true;
-    _.pull(this.tasks, task);
+    if (this.tasks[0].name === passedTask.name){
+    this.tasks[0].status = true}
   },
 
+  viewAllTasks: function(){
+    return this.tasks[0].name;
+  },
 
 }
 module.exports = Hero;

@@ -1,9 +1,10 @@
-var Task = function(difficulty,urgency,reward,completion_status){
-  
+var Task = function(name,difficulty,urgency,reward,status){
+
+  this.name = name
   this.difficulty = difficulty;
   this.urgency = urgency;
   this.reward = reward;
-  this.completion_status = completion_status;
+  this.status = status;
 }
 
 

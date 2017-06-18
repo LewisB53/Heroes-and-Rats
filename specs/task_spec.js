@@ -6,7 +6,7 @@ describe('Task',function(){
   var task1;
 
   beforeEach(function(){
-   task1 = new Task("Easy","whenever","A Clue",true);
+   task1 = new Task("Go","Easy","whenever","A Clue",true);
 
  })
 
@@ -23,7 +23,7 @@ describe('Task',function(){
   })
 
   it ("Task has completion status", function(){
-    assert.strictEqual(true,task1.completion_status);
+    assert.strictEqual(true,task1.status);
   })
 
 
