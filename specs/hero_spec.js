@@ -27,11 +27,11 @@ describe('Hero',function(){
  })
 
   it ("Hero has name", function(){
-    assert.strictEqual("Basil",hero1.name);
+    assert.strictEqual("Fred",hero1.name);
   }),
 
   it ("Hero has health", function(){
-    assert.strictEqual(100,hero1.health);
+    assert.strictEqual(200,hero1.health);
   }),
 
   it ("Hero has favourite food", function(){
@@ -39,7 +39,7 @@ describe('Hero',function(){
   })
 
   it ("Hero can talk", function(){
-    assert.strictEqual("My name is Basil",hero1.talk());
+    assert.strictEqual("My name is Fred",hero1.talk());
   })
 
   it("Hero gets health from Food", function(){
